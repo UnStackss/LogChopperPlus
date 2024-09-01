@@ -1,6 +1,6 @@
 # 🌲 LogChopperPro - The Ultimate Tree Chopping Experience! 🪓
 
-[![YouTube Video](https://img.youtube.com/vi/OleWi2JsP94/0.jpg)](https://www.youtube.com/embed/OleWi2JsP94)
+[![Watch the LogChopperPro Video](https://img.youtube.com/vi/OleWi2JsP94/0.jpg)](https://www.youtube.com/watch?v=OleWi2JsP94)
 
 LogChopperPro is a powerful and customizable Minecraft plugin that enhances your tree-chopping experience. Designed for players and server administrators who want to add realism, balance, and unique features to tree harvesting, LogChopperPro is your go-to plugin for all things logging! 🌳
 
