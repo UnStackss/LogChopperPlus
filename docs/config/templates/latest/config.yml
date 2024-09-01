@@ -1,0 +1,191 @@
+#      __                ________
+#     / /   ____  ____ _/ ____/ /_  ____  ____  ____  ___  _____
+#    / /   / __ \/ __ `/ /   / __ \/ __ \/ __ \/ __ \/ _ \/ ___/
+#   / /___/ /_/ / /_/ / /___/ / / / /_/ / /_/ / /_/ /  __/ /
+#  /_____/\____/\__, /\____/_/ /_/\____/ .___/ .___/\___/_/
+#              /____/                 /_/   /_/      / __ \_________
+#                                                   / /_/ / ___/ __ \
+#                                                  / ____/ /  / /_/ /
+#                                                 /_/   /_/   \____/
+#
+# LogChopper Pro, made with ♥ by UnStackss
+# UnStackss GitHub: https://github.com/UnStackss
+# Downloadable from UnStackss Dev: https://unstackss.dev
+
+# Configuration for statistics
+stats:
+  # Enable or disable bStats metrics
+  enable_bstats: true
+
+messages:
+  prefix: "&7[&eLogChopper Pro&7]"
+  invalid_command: "&cYou do not have permission to use this command."
+  reload_success: "&eConfiguration reloaded successfully!"
+  reload_failure: "&cFailed to reload configuration."
+  tree_limit_exceeded: "&cYou have reached your limit of chopping %limit% %tree%."
+  axe_cooldown: "&cYou must wait %time% before using this axe again."
+
+sounds:
+  clearleaves: ENTITY_SHEEP_SHEAR
+  woodcutting: BLOCK_WOOD_BREAK
+
+# LogChopper Pro Configuration
+logchopperpro:
+  # Enable or disable the custom drop functionality globally
+  enable_custom_drops: true
+  # Require players to be sneaking to chop trees
+  needsPlayerShifted: false
+  # Enable or disable global tree limits
+  global_tree_limits_enabled: false
+  # Enable or disable global axe cooldowns
+  global_axe_cooldowns_enabled: true
+
+  # Tree chopping limits
+  tree_limits:
+    global:
+      enabled: false
+      max_chops: 100
+      time_period: "1h" # Format: "1m" for minute, "1h" for hour, "1d" for day, "1w" for week
+    OAK_LOG:
+      enabled: false
+      max_chops: 20
+      time_period: "1d"
+    SPRUCE_LOG:
+      enabled: false # Disabling limits for this tree type
+    BIRCH_LOG:
+      enabled: false
+      max_chops: 10
+      time_period: "1d"
+
+  # Axe cooldown
+  axe_cooldowns:
+    global:
+      enabled: true
+      cooldown: "10s" # Format: "10s" for seconds, "1m" for minutes
+    IRON_AXE:
+      enabled: false
+      cooldown: "10s" # Format: "10s" for seconds, "1m" for minutes
+    GOLDEN_AXE:
+      enabled: false # Disabling cooldown for this axe type
+    DIAMOND_AXE:
+      enabled: false
+      cooldown: "30s"
+
+  # Axe damage configuration per tree type
+  axe_damage:
+    OAK_LOG: 2
+    SPRUCE_LOG: 4
+    BIRCH_LOG: 3
+    JUNGLE_LOG: 6
+    ACACIA_LOG: 3
+    DARK_OAK_LOG: 3
+    CHERRY_LOG: 5
+
+  # List of allowed tree types for chopping
+  allowed_trees:
+    - OAK_LOG
+    - SPRUCE_LOG
+    - BIRCH_LOG
+    - JUNGLE_LOG
+    - ACACIA_LOG
+    - DARK_OAK_LOG
+    - CHERRY_LOG
+
+  # List of allowed axe types for chopping
+  allowed_axes:
+    - IRON_AXE
+    - GOLDEN_AXE
+    - DIAMOND_AXE
+    - NETHERITE_AXE
+
+  # Custom drops configuration for each tree type
+  custom_drops:
+    OAK_LOG:
+      enabled: true
+      drops:
+        - type: APPLE
+          amount: 1
+          chance: 0.2
+          custom_model_data: 123
+          display_name: "&6Golden Apple"
+          lore:
+            - "&eA shiny apple"
+          enchantments:
+            - UNBREAKING:3
+            - LOOT_BONUS_BLOCKS:1
+          enabled: true
+
+        - type: DIAMOND
+          amount: 2
+          chance: 0.05
+          custom_model_data: 456
+          display_name: "&bShiny Diamond"
+          lore:
+            - "&aA precious gem"
+          enchantments:
+            - FORTUNE:2
+          enabled: false
+
+    SPRUCE_LOG:
+      enabled: true
+      drops:
+        - type: STICK
+          amount: 4
+          chance: 0.3
+          enabled: false
+
+        - type: DIAMOND_AXE
+          amount: 1
+          chance: 0.1
+          custom_model_data: 789
+          display_name: "&cSpruce Axe"
+          lore:
+            - "&dA powerful axe"
+          enchantments:
+            - EFFICIENCY:5
+            - UNBREAKING:3
+          enabled: false
+
+  # Limits configurations
+  limits:
+    enabled: false
+    groups:
+      vip1:
+        tree_limits:
+          OAK_LOG:
+            enabled: false
+            max_chops: 50
+            time_period: "1d"
+          SPRUCE_LOG:
+            enabled: false
+            max_chops: 30
+            time_period: "1d"
+        axe_cooldowns:
+          IRON_AXE:
+            enabled: false
+          DIAMOND_AXE:
+            enabled: false
+            cooldown: "10s"
+      vip2:
+        tree_limits:
+          OAK_LOG:
+            enabled: false
+            max_chops: 70
+            time_period: "1d"
+          BIRCH_LOG:
+            enabled: true
+            max_chops: 20
+            time_period: "1d"
+        axe_cooldowns:
+          IRON_AXE:
+            enabled: false
+            cooldown: "5s"
+    # General limits for groups
+    general:
+      tree_limits:
+        enabled: false
+        max_chops: 200
+        time_period: "1d"
+      axe_cooldowns:
+        enabled: false
+        cooldown: "5s"
